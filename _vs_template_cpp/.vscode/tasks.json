@@ -1,0 +1,41 @@
+{
+  // from https://code.visualstudio.com/docs/cpp/config-clang-mac
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-stdlib=libc++",
+        "main.cpp",
+        "-o",
+        "a.out",
+        "--debug",
+        "-g"
+      ]
+    },
+    // default task for shift-cmd-B
+    // runs dependsOn tasks first
+    // opens in same build terminal
+    // https://github.com/microsoft/vscode-cpptools/issues/1201
+    {
+      "label": "Run without debugging",
+      "type": "shell",
+      "command": "./a.out",
+      "dependsOn": [
+        "Build"
+      ],
+      "args": [
+        "-std=c++17",
+        "-stdlib=libc++",
+        "-g"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
