@@ -1,10 +1,9 @@
 # Usage
 
-`% gh repo create [{org-name}/]{repo-name} -d "{description}" -template {template-repo} [--gitignore {language}] --license {license} --enable-issues --enable-wiki=false
+`% gh repo create [org-name/]{repo-name} -d "{description}" --template {template-repo}`
 
-Other options: --private -public
+https://cli.github.com/manual/gh_repo_create
 
-? internal? URL? wiki?
 
 # References
 
